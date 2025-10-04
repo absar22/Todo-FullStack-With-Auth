@@ -38,7 +38,7 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository**
 ```bash
 git clone <your-repo-url>
-cd todo-app
+cd FULL-STACK-TODO
 ```
 
 2. **Install dependencies**
@@ -123,6 +123,7 @@ FULL-STACK-TODO/
 ├── package.json          # Project dependencies
 ├── package-lock.json     # Dependency lock file
 └── README.md             # Project documentation
+```
 
 ## Deployment to Render
 
@@ -170,7 +171,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Author
 
-ABSAR AHMAD - [Your GitHub Profile](https://github.com/absar22)
+Absar Ahmad - [Your GitHub Profile](https://github.com/absar22)
 
 ## Acknowledgments
 
@@ -180,4 +181,4 @@ ABSAR AHMAD - [Your GitHub Profile](https://github.com/absar22)
 
 ---
 
-**Need help?** Open an issue or contact me at my absarahmad137@gmail.com
+**Need help?** Open an issue or contact me at absarahmad137@gmail.com

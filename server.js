@@ -29,7 +29,7 @@ app.set('trust proxy', 1)
 // Sessions
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || 'myTODO_APP_WITH-AUTH-AND_MVC', 
+    secret: process.env.SESSION_SECRET, 
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({

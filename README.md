@@ -88,28 +88,41 @@ The application will be available at `http://localhost:8001`
 ## Project Structure
 
 ```
-todo-app/
+FULL-STACK-TODO/
 ├── config/
 │   ├── .env              # Environment variables
 │   ├── database.js       # MongoDB connection
 │   └── passport.js       # Passport authentication config
-├── models/
+├── controller/
+│   ├── auth.js           # Authentication controllers
+│   └── todos.js          # Todo CRUD controllers
+├── middleware/
+│   └── auth.js           # Authentication middleware
+├── model/
 │   ├── User.js           # User model
 │   └── Todo.js           # Todo model
 ├── routes/
 │   ├── main.js           # Authentication routes
-│   └── todos.js          # Todo CRUD routes
+│   └── todos.js          # Todo routes
 ├── views/
 │   ├── index.ejs         # Landing page
 │   ├── login.ejs         # Login page
 │   ├── signup.ejs        # Signup page
 │   └── todos.ejs         # Todo list page
 ├── public/
-│   └── style.css         # Custom styles
+│   ├── css/
+│   │   ├── index.css     # Landing page styles
+│   │   ├── login.css     # Login page styles
+│   │   ├── signup.css    # Signup page styles
+│   │   └── todos.css     # Todo list styles
+│   └── js/
+│       └── main.js       # Client-side JavaScript
+├── node_modules/         # Dependencies (not tracked in git)
+├── .gitignore            # Git ignore file
 ├── server.js             # Main application file
-├── package.json
-└── README.md
-```
+├── package.json          # Project dependencies
+├── package-lock.json     # Dependency lock file
+└── README.md             # Project documentation
 
 ## Deployment to Render
 
@@ -157,7 +170,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Author
 
-Your Name - [Your GitHub Profile](https://github.com/absar22)
+ABSAR AHMAD - [Your GitHub Profile](https://github.com/absar22)
 
 ## Acknowledgments
 

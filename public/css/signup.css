@@ -1,0 +1,41 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  width: 300px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+input {
+  padding: .75rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+input[type="submit"] {
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover { background: #4f46e5; }
+
+.alert {
+  padding: .5rem 1rem;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 6px;
+  margin-bottom: .5rem;
+}

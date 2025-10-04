@@ -22,18 +22,26 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))
+
+// Trust proxy - CRITICAL for Render
+app.set('trust proxy', 1)
+
 // Sessions
 app.use(
   session({
-    secret: 'keyboardcat ', 
+    secret: process.env.SESSION_SECRET || 'myTODO_APP_WITH-AUTH-AND_MVC', 
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: process.env.DB_STRING, // your MongoDB URI
+      mongoUrl: process.env.DB_STRING,
     }),
-    
+    cookie: {
+      secure: process.env.NODE_ENV === 'production', 
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24 // 24 hours
+    }
   })
-);
+)
   
 // Passport middleware
 app.use(passport.initialize())
@@ -44,6 +52,8 @@ app.use(flash())
 app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
  
-app.listen(process.env.PORT, ()=>{
-    console.log('Server is running, you better catch it!')
-})    
+const PORT = process.env.PORT || 8001
+
+app.listen(PORT, ()=>{
+    console.log(`Server is running on port ${PORT}, you better catch it!`)
+})

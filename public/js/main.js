@@ -1,6 +1,7 @@
 const deleteBtn = document.querySelectorAll('.del')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
+const message = document.getElementById('message')
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTodo)
@@ -67,3 +68,16 @@ async function markIncomplete(){
         console.log(err)
     }
 }
+
+function updateMessage(){
+    const todos = Array.from(document.querySelectorAll('span.not,span.completed'))
+    const completed = Array.from(document.querySelectorAll('span.completed'))
+    const total = todos.length
+    const done = completed.length
+    if(done === total && total > 0 ){
+        message.style.display='block'
+    }else{
+        message.style.display = 'none'
+    }
+}
+updateMessage()
